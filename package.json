@@ -1,0 +1,8 @@
+
+{
+  "name": "badproxy",
+  "version": "1.0.0",
+  "dependencies": {
+    "toxy": "0.3.12"
+  }
+}
