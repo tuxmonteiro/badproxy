@@ -40,6 +40,6 @@ throng({ lifetime: Infinity }, (id) => {
       .poisonRule(rules.probability(5)) // does the same as withRule()
       .poisonRule(rules.method('GET'))
 
-    proxy.listen(3000)
-    console.log('Server listening on port:', 3000)
+    proxy.listen(process.env.PORT || 3000)
+    console.log(`BadProxy UP (process ${id})`)
 });
