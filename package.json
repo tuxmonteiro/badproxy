@@ -3,6 +3,7 @@
   "name": "badproxy",
   "version": "1.0.0",
   "dependencies": {
-    "toxy": "0.3.12"
+    "toxy": "0.3.12",
+    "throng": "4.0.0"
   }
 }
