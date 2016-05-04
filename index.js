@@ -23,17 +23,17 @@ throng({ lifetime: Infinity }, (id) => {
 //      .poison(poisons.inject({ code: 502, body: 'Error!', headers: { 'X-Toxy-Poison': 'error' } }))
 //      .withRule(rules.probability(5))
 
-//    route
-//      .poison(poisons.slowClose({ delay: 1000 }))
-//      .withRule(rules.probability(5))
+    route
+      .poison(poisons.slowClose({ delay: 1000 }))
+      .withRule(rules.probability(5))
 
     //route
     //  .poison(poisons.rateLimit({ limit: 2, threshold: 5000 }))
     //  .withRule(rules.probability(20))
 
-    route
-      .poison(poisons.slowRead({ bps: 100 }))
-      .withRule(rules.probability(5))
+//    route
+//      .poison(poisons.slowRead({ bps: 100 }))
+//      .withRule(rules.probability(5))
 
 //    route
 //      .poison(poisons.abort())
