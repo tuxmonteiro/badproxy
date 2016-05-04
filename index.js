@@ -16,8 +16,8 @@ throng({ lifetime: Infinity }, (id) => {
 
     var route = proxy.get('/*')
 
-    //route
-    //  .poison(poisons.latency({ jitter: 1000 }))
+//    route
+//      .poison(poisons.latency({ jitter: 1000 }))
 
 //    route
 //      .poison(poisons.inject({ code: 502, body: 'Error!', headers: { 'X-Toxy-Poison': 'error' } }))
