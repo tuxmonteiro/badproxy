@@ -23,9 +23,9 @@ throng({ lifetime: Infinity }, (id) => {
 //      .poison(poisons.inject({ code: 502, body: 'Error!', headers: { 'X-Toxy-Poison': 'error' } }))
 //      .withRule(rules.probability(5))
 
-    route
-      .poison(poisons.slowClose({ delay: 1000 }))
-      .withRule(rules.probability(5))
+//    route
+//      .poison(poisons.slowClose({ delay: 1000 }))
+//      .withRule(rules.probability(5))
 
     //route
     //  .poison(poisons.rateLimit({ limit: 2, threshold: 5000 }))
