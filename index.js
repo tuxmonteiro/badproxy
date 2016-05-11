@@ -6,15 +6,16 @@ const rules = proxy.rules
 const poisons = proxy.poisons
 
 // var WORKERS = process.env.WEB_CONCURRENCY || 1;
+var PROXY_TO = process.env.PROXY_TO || "http://127.0.0.1:8080";
 
 throng({ lifetime: Infinity }, (id) => {
     proxy
-      .forward('http://static-qa2-teste-1.gcloud.qa02.globoi.com')
+      .forward(PROXY_TO)
       .options({ forwardHost: true })
-    //  .rule(rules.probability(50))
-    //  .poison(poisons.slowOpen({ delay: 500 }))
+//      .rule(rules.probability(50))
+//      .poison(poisons.slowOpen({ delay: 500 }))
 
-    // var route = proxy.get('/*')
+    var route = proxy.get('/*')
 
 //    route
 //      .poison(poisons.latency({ jitter: 1000 }))
@@ -34,10 +35,10 @@ throng({ lifetime: Infinity }, (id) => {
 //      .poison(poisons.slowRead({ bps: 100 }))
 //      .withRule(rules.probability(5))
 
-//    route
+    route
 //      .poison(poisons.abort())
 //      .poisonRule(rules.probability(5)) // does the same as withRule()
-//      .poisonRule(rules.method('GET'))
+        .poisonRule(rules.method('GET'))
 
     proxy.listen(process.env.PORT || 3000)
     console.log(`BadProxy UP (process ${id})`)
